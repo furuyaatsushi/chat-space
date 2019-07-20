@@ -36,9 +36,8 @@ Things you may want to cover:
 
 ## usersテーブル
 
-|Type|Options|
-|----|-------|
-|integer|null: false, foreign_key: true|
+|Column|Type|Options|
+|------|----|-------|
 |name|string|null: false|
 
 ### Association
@@ -48,9 +47,8 @@ Things you may want to cover:
 
 ## groupsテーブル
 
-|Type|Options|
-|----|-------|
-|integer|null: false, foreign_key: true|
+|Column|Type|Options|
+|------|----|-------|
 |name|string|null: false|
 
 ### Association
