@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## mennbersテーブル
+## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -33,3 +33,23 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+
+### Association
+- has_many groups through members
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+
+### Association
+- has_many users through members
