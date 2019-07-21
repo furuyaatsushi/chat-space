@@ -57,9 +57,8 @@ Things you may want to cover:
 - has_many :messages
 
 ## messagesテーブル
-|Type|Options|
-|----|-------|
-|integer|null: false, foreign_key: true|
+|Column|Type|Options|
+|------|----|-------|
 |message|text|null: false|
 
 ### Association
