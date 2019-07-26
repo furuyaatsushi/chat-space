@@ -1,0 +1,24 @@
+%div{class: "chat-side"}
+  %div{class: "side-header"}
+    %div{class: "side-header__box"}
+      %p{class: "side-header__box__user-name"}test-user
+      %ul{class: "side-header__box__menu"}
+        %li{class: "side-header__box__menu__new-group"}
+          %a{href: "/groups/new"}
+            %i{class: "fa fa-edit"}
+        %li{class: "side-header__box__menu__edit-user"}
+          %a{href: "/users/id/new"}
+            %i{class: "fa fa-cog"}
+  %div{class: "groups"}
+    %a{href: "/groups/id/messages"}
+      %div{class: "group"}
+        %p{class: "group__group-name"}test-group
+        %p{class: "group__last-message"}さようなら
+    %a{href: "/groups/id/messages"}
+      %div{class: "group"}
+        %p{class: "group__group-name"}sample-group
+        %p{class: "group__last-message"}hello!
+    %a{href: "/groups/id/messages"}
+      %div{class: "group"}
+        %p{class: "group__group-name"}example
+        %p{class: "group__last-message"}まだメッセージがありません

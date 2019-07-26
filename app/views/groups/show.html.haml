@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+%html
+  %head
+    %meta(charset="UTF-8")
+%body
+  %div{class: "wrapper"}
+    %div{class: "flash-box"}
+      %p{class: "notice"}グループを作成しました。
+    = render partial: 'messages/side'
+    
+    %div{class: "chat-main"}
+      %div{class: "main-header"}
+        %div{class: "main-header__left-box"}
+          %h2{class: "main-header__left-box__current-group"}test-group
+          %ul{class: "main-header__list-box__member-list"}
+            Members :
+            %li{class: "main-header__list-box__member-list__members"}test-user
+        %a{href: "/groups/id/edit"}
+          %div{class: "edit-btn"}Edit
+      = render partial: 'messages/messages'
+      %div{class: "form"}
+        %form{class: "new_message", id: "new_message", enctype: "multipart/form-data", action: "/groups/group_id/messages", accept_charset: "UTF-8", method: "post"}
+          %input{name: "utf8", type: "hidden", value: "✔︎"}
+          %input{type: "hidden", name: "authenticity_token", value: ""}
+          %div{class: "input-box"}
+            %input{placeholder: "type a message", class: "input-box__text", type: "text", name: "message[content]", id: "message_content"}
+            %label{class: "input-box__image", for: "message_image"}
+              %i{class: "fa fa-image"}
+              %input{class: "input-box__image__file", type: "file", name: "message[image]", id: "message_image"}
+          %input{type: "submit", name: "commit", value: "Send", class: "submit-btn", data: {disable: {with: "Sending"}}}
