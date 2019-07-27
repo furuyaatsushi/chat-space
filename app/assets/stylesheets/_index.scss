@@ -1,0 +1,72 @@
+.wrapper{
+  min-height: 100vh;
+  width:100%;
+  position: relative;
+}
+
+.chat-side p{
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.chat-side a{
+  color: #ffffff;
+}
+
+.chat-side{
+  width: 300px;
+  height: 100vh;
+  float: left;
+  background-color: #2f3e51;
+  .side-header{
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0 20px;
+    &__box{
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      ul{
+        display: flex;
+        list-style: none;
+        li{
+          margin-left: 0.3rem;
+          .fa{
+            color: #ffffff;
+            .fa-edit:before{
+              font-family: "FontAwesome";
+              content: "\f044";
+            }
+            .fa-cog:before{
+              font-family: FontAwesome;
+              content: "\f013"
+            }
+          }
+        }
+      }
+    }
+  }
+  .groups{
+    height: calc(100vh - 100px);
+    background-color: #253141;
+    padding: 20px 20px 0;
+    overflow: scroll;
+    a{
+      text-decoration: none;
+      .group{
+        margin-bottom: 40px;
+        &__group-name{
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__last-message{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
