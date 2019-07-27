@@ -1,31 +1,29 @@
-<!DOCTYPE html>
-%body
-  .wrapper
-    .flash-box
-      %p.notice
-        グループを作成しました。
-    = render partial: 'messages/side'
+.wrapper
+  .flash-box
+    %p.notice
+      グループを作成しました。
+  = render partial: 'messages/side'
     
-    .chat-main
-      .main-header
-        .main-header__left-box
-          %h2.main-header__left-box__current-group
-            test-group
-          %ul.main-header__list-box__member-list
-            Members :
-            %li.main-header__list-box__member-list__members
-              test-user
-        %a{href: "/groups/id/edit"}
-          .edit-btn
-            Edit
-      = render partial: 'messages/messages'
-      .form
-        %form.new_message#new_message{enctype: "multipart/form-data", action: "/groups/group_id/messages", accept_charset: "UTF-8", method: "post"}
-          %input{name: "utf8", type: "hidden", value: "✔︎"}
-          %input{type: "hidden", name: "authenticity_token", value: ""}
-          .input-box
-            %input.input-box__text#message_content{placeholder: "type a message", type: "text", name: "message[content]"}
-            %label.input-box__image{for: "message_image"}
-              %i.fa.fa-image
-              %input.input-box__image__file#message_image{type: "file", name: "message[image]"}
-          %input.submit-btn{type: "submit", name: "commit", value: "Send", data: {disable: {with: "Sending"}}}
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group
+          test-group
+        %ul.main-header__list-box__member-list
+          Members :
+          %li.main-header__list-box__member-list__members
+            test-user
+      =link_to "/groups/id/edit" do
+        .edit-btn
+          Edit
+    = render partial: 'messages/messages'
+    .form
+      %form.new_message#new_message{enctype: "multipart/form-data", action: "/groups/group_id/messages", accept_charset: "UTF-8", method: "post"}
+        %input{name: "utf8", type: "hidden", value: "✔︎"}
+        %input{type: "hidden", name: "authenticity_token", value: ""}
+        .input-box
+          %input.input-box__text#message_content{placeholder: "type a message", type: "text", name: "message[content]"}
+          %label.input-box__image{for: "message_image"}
+            %i.fa.fa-image
+            %input.input-box__image__file#message_image{type: "file", name: "message[image]"}
+        %input.submit-btn{type: "submit", name: "commit", value: "Send", data: {disable: {with: "Sending"}}}
