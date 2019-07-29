@@ -10,9 +10,8 @@
           Members :
           %li.main-header__list-box__member-list__members
             test-user
-      =link_to "/groups/id/edit" do
-        .edit-btn
-          Edit
+      .edit-btn
+        =link_to "edit", edit_group_path(params[:group_id])
     = render partial: 'messages/messages'
     .form
       %form.new_message#new_message{enctype: "multipart/form-data", action: "/groups/group_id/messages", accept_charset: "UTF-8", method: "post"}

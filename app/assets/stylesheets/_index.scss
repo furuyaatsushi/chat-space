@@ -11,6 +11,7 @@
 
 .chat-side a{
   color: #ffffff;
+  text-decoration: none;
 }
 
 .chat-side{
@@ -53,19 +54,18 @@
   .groups{
     height: calc(100vh - 100px);
     background-color: #253141;
-    padding: 20px 20px 0;
+    padding: 0 20px;
     overflow: scroll;
-    a{
-      text-decoration: none;
-      .group{
-        margin-bottom: 40px;
-        &__group-name{
-          font-size: 15px;
-          margin-bottom: 5px;
-        }
-        &__last-message{
-          font-size: 11px;
-        }
+    .group{
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__message{
+         font-size: 11px;
+         margin-bottom: 40px;
       }
     }
   }
