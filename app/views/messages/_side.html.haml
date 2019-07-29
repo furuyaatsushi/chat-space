@@ -5,27 +5,16 @@
         = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__new-group
-          =link_to edit_user_path(current_user) do
+          =link_to new_group_path do
             %i.fa.fa-edit
         %li.side-header__box__menu__edit-user
-          =link_to "/users/id/new" do
+          =link_to edit_user_path(current_user) do
             %i.fa.fa-cog
   .groups
-    =link_to "/groups/id/messages" do
-      .group
-        %p.group__group-name
-          test-group
-        %p.group__last-message
-          さようなら
-    =link_to "/groups/id/messages" do
-      .group
-        %p.group__group-name
-          sample-group
-        %p.group__last-message
-          hello!
-    =link_to "/groups/id/messages" do
-      .group
-        %p.group__group-name
-          example
-        %p.group__last-message
-          まだメッセージがありません
+    .group
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。

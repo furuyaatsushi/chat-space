@@ -34,18 +34,18 @@
         }
       }
     }
-    a{
+    .edit-btn{
       float: right;
-      text-decoration: none;
-      color: #38AEF0;
-      .edit-btn{
-        height:40px;
-        padding: 0 20px;
-        line-height: 40px;
-        margin-top: 28px;
-        position: absolute;
-        right: 40px;
-        border: 1px solid #38AEF0;
+      height:40px;
+      padding: 0 20px;
+      line-height: 40px;
+      margin-top: 28px;
+      position: absolute;
+      right: 40px;
+      border: 1px solid #38AEF0;
+      a{
+        text-decoration: none;
+        color: #38AEF0;
       }
     }
   }
