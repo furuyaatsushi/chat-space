@@ -5,21 +5,21 @@
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group
-          test-group
+          = @group.name
         %ul.main-header__list-box__member-list
           Members :
           %li.main-header__list-box__member-list__members
-            test-user
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .edit-btn
         =link_to "edit", edit_group_path(params[:group_id])
-    = render partial: 'messages/messages'
+    .message
+      = render @messages
     .form
-      %form.new_message#new_message{enctype: "multipart/form-data", action: "/groups/group_id/messages", accept_charset: "UTF-8", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✔︎"}
-        %input{type: "hidden", name: "authenticity_token", value: ""}
-        .input-box
-          %input.input-box__text#message_content{placeholder: "type a message", type: "text", name: "message[content]"}
-          %label.input-box__image{for: "message_image"}
-            %i.fa.fa-image
-            %input.input-box__image__file#message_image{type: "file", name: "message[image]"}
-        %input.submit-btn{type: "submit", name: "commit", value: "Send", data: {disable: {with: "Sending"}}}
+      = form_for [@group, @message] do |f| 
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'fa fa.image'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit', data: {disable: {with: 'Sending'}}
