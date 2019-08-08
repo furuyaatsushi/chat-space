@@ -14,10 +14,11 @@
       .edit-btn
         =link_to "edit", edit_group_path(params[:group_id])
     .message
-      = render @messages
+      - @messages.each do |message|
+        = render partial: "messages/message", locals: { message: message }
     .form
-      = form_for [@group, @message] do |f| 
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      = form_for [@group, @message], id: 'new_message' do |f| 
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message', id: 'message_content'
         .form__mask
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'fa fa.image'
