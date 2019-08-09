@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.message').append(html);
-      $('#message_content').val('');
+      $('#new_message')[0].reset();
       function scrollBottom(){
         var target = $('.messages:last');
         var position = target.offset().top;
