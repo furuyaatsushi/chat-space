@@ -1,0 +1,150 @@
+.icon {display: inline-block;
+width: 1em;
+height: 1em;
+background-size: 100% auto;
+background-position: center center;
+position: relative;
+background-repeat: no-repeat;
+top: 3px;
+}
+.icon.attention {
+	background-image: url(attention.png);
+}
+.icon.bad {
+	background-image: url(bad.png)
+}
+.icon.branch {
+	background-image: url(branch.png)
+}
+.icon.ccomment {
+	background-image: url(ccomment.png)
+}
+.icon.cloud_dl {
+	background-image: url(cloud_dl.png)
+}
+.icon.cloud_up {
+	background-image: url(cloud_up.png)
+}
+.icon.comment_02 {
+	background-image: url(comment_02.png)
+}
+.icon.comment_03 {
+	background-image: url(comment_03.png)
+}
+.icon.comment_r_02 {
+	background-image: url(comment_r_02.png)
+}
+.icon.comment_r_03 {
+	background-image: url(comment_r_03.png)
+}
+.icon.comment_r {
+	background-image: url(comment_r.png)
+}
+.icon.crown {
+	background-image: url(crown.png)
+}
+.icon.css3 {
+	background-image: url(css3.png)
+}
+.icon.dashboard {
+	background-image: url(dashboard.png)
+}
+.icon.database_edit {
+	background-image: url(database_edit.png)
+}
+.icon.database {
+	background-image: url(database.png)
+}
+.icon.design {
+	background-image: url(design.png)
+}
+.icon.detabase_search {
+	background-image: url(detabase_search.png)
+}
+.icon.display {
+	background-image: url(display.png)
+}
+.icon.files {
+	background-image: url(files.png)
+}
+.icon.folder {
+	background-image: url(folder.png)
+}
+.icon.git {
+	background-image: url(git.png)
+}
+.icon.happy {
+	background-image: url(happy.png)
+}
+.icon.htm5 {
+	background-image: url(htm5.png)
+}
+.icon.information {
+	background-image: url(information.png)
+}
+.icon.like {
+	background-image: url(like.png)
+}
+.icon.mail {
+	background-image: url(mail.png)
+}
+.icon.network_computer {
+	background-image: url(network_computer.png)
+}
+.icon.network_server {
+	background-image: url(network_server.png)
+}
+.icon.newfile {
+	background-image: url(newfile.png)
+}
+.icon.notepc {
+	background-image: url(notepc.png)
+}
+.icon.question {
+	background-image: url(question.png)
+}
+.icon.ruby {
+	background-image: url(ruby.icon.icon.png)
+}
+.icon.sent {
+	background-image: url(sent.png)
+}
+.icon.setting {
+	background-image: url(setting.png)
+}
+.icon.smartphone {
+	background-image: url(smartphone.png)
+}
+.icon.sun {
+	background-image: url(sun.png)
+}
+.icon.surprise {
+	background-image: url(surprise.png)
+}
+.icon.user {
+	background-image: url(user.png)
+}
+.icon.world {
+	background-image: url(world.png)
+}
+.icon.pen {
+	background-image: url(pen.png)
+}
+.icon.sublime {
+	background-image: url(sublime.png)
+}
+.icon.check {
+	background-image: url(check.png)
+}
+.icon.checklist {
+	background-image: url(checklist.png)
+}
+.icon.check_icon_00 {
+	background-image: url(checklist.png)
+}
+.icon.check_icon_01 {
+	background-image: url(comment_r_03.png)
+}
+.icon.check_icon_02 {
+	background-image: url(comment_r_03.png)
+}
