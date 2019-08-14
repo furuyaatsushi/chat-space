@@ -69,7 +69,6 @@ $(document).on('turbolinks:load', function(){
     $(this.parentNode).remove();
     var username = $(this).data('user-name')
     appendAddUserToHTML(username);
-    var groupuser = 
   })
 
   $(document).on("click", ".chat-group-user__btn--remove", function(){
