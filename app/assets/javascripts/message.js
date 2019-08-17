@@ -51,7 +51,8 @@ $(document).on('turbolinks:load', function(){
     })
   })
   var buildMessageHTML = function(message) {
-    if (message.content && message.image.url) {
+    var content = message.content ? `${message.content}` : "";
+    var img = message.image ? `<img src= ${message.image} class="lower-message__image" >` : "";
       var html = `<div class="messages" data-id='${message.id}'>
                     <div class="message__upper-info">
                       <div class="message__upper-info__talker">
@@ -62,45 +63,14 @@ $(document).on('turbolinks:load', function(){
                       </div>
                     </div>
                     <div class="message__text">
-                      <p class="lower-message__content">
-                        ${message.content}
-                      </p>
-                      <img src="${message.image} class="lower-message__image" >
+                      <div>
+                        ${content}
+                      </div>
+                        ${img}
                     </div>
                   </div>`
-    } else if (message.content) {
-      var html = `<div class="messages" data-id='${message.id}'>
-                    <div class="message__upper-info">
-                      <div class="message__upper-info__talker">
-                        ${message.user_name}
-                      </div>
-                      <div class="message__upper-info__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message__text">
-                      <p class="lower-message__content">
-                        ${message.content}
-                      </p>
-                    </div>
-                  </div>`
-    } else if (message.image.url) {
-      var html = `<div class="messages" data-id='${message.id}'>
-                    <div class="message__upper-info">
-                      <div class="message__upper-info__talker">
-                        ${message.user_name}
-                      </div>
-                        <div class="message__upper-info__date">
-                          ${message.created_at}
-                        </div>
-                    </div>
-                    <div class="message__text">
-                      <img src="${message.image}" class="lower-message__image" >
-                    </div>
-                   </div>`
-    };
     return html;
-  };
+  }
 
   var reloadMessages = function() {
     last_message_id = $('.messages:last').data('id');
