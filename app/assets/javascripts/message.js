@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.message').append(html);
+      $('.message-content').append(html);
       $('#new_message')[0].reset();
       function scrollBottom(){
         var target = $('.messages:last');
@@ -50,4 +50,56 @@ $(document).on('turbolinks:load', function(){
       $('.form__submit').prop('disabled', false);
     })
   })
+  var buildMessageHTML = function(message) {
+    var content = message.content ? `${message.content}` : "";
+    var img = message.image ? `<img src= ${message.image} class="lower-message__image" >` : "";
+      var html = `<div class="messages" data-id='${message.id}'>
+                    <div class="message__upper-info">
+                      <div class="message__upper-info__talker">
+                        ${message.user_name}
+                      </div>
+                      <div class="message__upper-info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="message__text">
+                      <div>
+                        ${content}
+                      </div>
+                        ${img}
+                    </div>
+                  </div>`
+    return html;
+  }
+
+  var reloadMessages = function() {
+    last_message_id = $('.messages:last').data('id');
+    $.ajax({
+      url: 'api/messages',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages){
+      messages.forEach(function(message){
+        var insertHTML = buildMessageHTML(message);
+        $('.message-content').append(insertHTML);
+        function scrollBottom(){
+          var target = $('.messages:last');
+          var position = target.offset().top;
+          $('html, body').animate({scrollTop: position}, 1000);
+        }
+        scrollBottom();
+      })
+    })
+    .fail(function(){
+      alert('更新できませんでした');
+    });
+  };
+
+  $(function(){
+    if(location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 5000);
+    }
+  });
 });
