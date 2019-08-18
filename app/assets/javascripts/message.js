@@ -99,7 +99,7 @@ $(document).on('turbolinks:load', function(){
 
   $(function(){
     if(location.href.match(/\/groups\/\d+\/messages/)){
-    setInterval(reloadMessages, 5000);
+      setInterval(reloadMessages, 5000);
     }
   });
 });
