@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :groups, only: [:new, :create, :edit, :update] do
+  resources :groups, only: [:new, :create, :edit, :update, :index] do
     resources :messages, only: [:index, :create]
     namespace :api do
       resources :messages, only: :index, defaults: {format: 'json'}

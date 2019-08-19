@@ -14,7 +14,7 @@
     .chat-group-form__field--left
       = f.label :チャットメンバーを追加, class: 'chat-group-form__label', for: 'chat_group_チャットメンバーを追加'
     .chat-group-form__field--right
-      = f.text_field :name, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください', type: 'text'
+      = f.text_field :member, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください', type: 'text', value: ''
     .chat-group-search-user
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

@@ -74,32 +74,32 @@ $(document).on('turbolinks:load', function(){
 
   var reloadMessages = function() {
     last_message_id = $('.messages:last').data('id');
-    $.ajax({
-      url: 'api/messages',
-      type: 'GET',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(messages){
-      messages.forEach(function(message){
-        var insertHTML = buildMessageHTML(message);
-        $('.message-content').append(insertHTML);
-        function scrollBottom(){
-          var target = $('.messages:last');
-          var position = target.offset().top;
-          $('html, body').animate({scrollTop: position}, 1000);
-        }
-        scrollBottom();
+    if(window.location.href.match(/\/groups\/\d+\/messages/)){
+      $.ajax({
+        url: 'api/messages',
+        type: 'GET',
+        dataType: 'json',
+        data: {id: last_message_id}
       })
-    })
-    .fail(function(){
-      alert('更新できませんでした');
-    });
+      .done(function(messages){
+        messages.forEach(function(message){
+          var insertHTML = buildMessageHTML(message);
+          $('.message-content').append(insertHTML);
+          function scrollBottom(){
+            var target = $('.messages:last');
+            var position = target.offset().top;
+            $('html, body').animate({scrollTop: position}, 1000);
+          }
+          scrollBottom();
+        })
+      })
+      .fail(function(){
+        alert('更新できませんでした');
+      });
+    }
   };
 
   $(function(){
-    if(location.href.match(/\/groups\/\d+\/messages/)){
-      setInterval(reloadMessages, 5000);
-    }
+    setInterval(reloadMessages, 5000);
   });
 });
