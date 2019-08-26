@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
     .done(function(users){
       $(".chat-group-search-user").empty();
       if (input.length == 0) {
-        $('.chat-group-search-user').remove();
+        $('.chat-group-search-user').empty();
       }
       else{
         if (users.length !== 0) {
