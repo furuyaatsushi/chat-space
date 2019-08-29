@@ -10,6 +10,7 @@ $(document).on('turbolinks:load', function(){
 
   $(document).on("click", ".chat-group-user__btn--add", function(e){
     e.preventDefault();
+    $(this.parentNode).remove();
     var user = $(this).data('user-id');
     $.ajax({
       type: 'GET',
@@ -18,7 +19,6 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json'
     })
     .done(function(user){
-      $(this.parentNode).remove();
       appendAddUserToHTML(user);
     })
     .fail(function(){
