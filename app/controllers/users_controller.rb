@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     respond_to do |format|
       format.html
-      format.json { render 'index', json: @user }
+      format.json 
     end
   end
   
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :keyword)
+    params.require(:user).permit(:name, :email, :keyword, :user_id)
   end
 
   def set_group
