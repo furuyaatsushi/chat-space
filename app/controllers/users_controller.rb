@@ -5,10 +5,18 @@ class UsersController < ApplicationController
   end
 
   def search
-      @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user)
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user)
     respond_to do |format|
       format.html
       format.json { render 'index', json: @users }
+    end
+  end
+
+  def find
+    @user = User.find(params[:user_id])
+    respond_to do |format|
+      format.html
+      format.json { render 'index', json: @user }
     end
   end
   
