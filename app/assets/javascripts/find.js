@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function(){
     $('.js-add-user').append(html);
   }
 
-  $(document).on("click", ".chat-group-user__btn--add", function(e){
+  $('.chat-group-search-user').on("click", ".chat-group-user__btn--add", function(e){
     e.preventDefault();
     $(this.parentNode).remove();
     var user = $(this).data('user-id');
@@ -27,7 +27,6 @@ $(document).on('turbolinks:load', function(){
   })
 
   $(document).on("click", ".chat-group-user__btn--remove", function(e){
-    e.preventDefault();
     $(this.parentNode).remove();
   })
 });
